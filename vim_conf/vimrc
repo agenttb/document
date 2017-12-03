@@ -1,6 +1,22 @@
+set nocompatible              " 去除VI一致性,必须
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
+Plugin 'octol/vim-cpp-enhanced-highlight'
+
+call vundle#end()            " 必须
+filetype plugin indent on
+
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
 set number
+
+
 
 " Ignore case when searching
 set ignorecase
@@ -88,20 +104,10 @@ set tw=500
 set ai "Auto indent
 set si "Smart indent
 set wrap "
+set cul
 
-let g:pathogen_disabled = ['syntastic', 'YouCompleteMe']
-execute pathogen#infect()
 syntax on
 filetype plugin indent on
-" Syntastic plugin config
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"highlight SyntasticErrorLine guibg=#2f0000
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
 
 " Tarbar plugin config
 nmap <C-m> :TagbarToggle<CR>
@@ -112,3 +118,11 @@ nmap <C-m> :TagbarToggle<CR>
 set mouse=a
 map <C-e> :NERDTreeToggle<CR>
 "nmap <C-l> :YcmCompleter GoToDefinitionElseDeclaration<CR>
+let g:cpp_class_scope_highlight = 1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_concepts_highlight = 1
+
+let g:AutoPairsFlyMode = 1
+
+
